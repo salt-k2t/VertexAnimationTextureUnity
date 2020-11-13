@@ -6,8 +6,7 @@
 		_PosTex("position texture", 2D) = "black"{}
 		_Length ("animation length", Float) = 1
 		[Toggle(ANIM_LOOP)] _Loop("loop", Float) = 0
-		_Scale("Scale" , Range(0,1)) = 0.1
-		_Middle("middle" , Range(0,1)) = 0
+		[IntRange]_Detail("Detail" , Range(1,5)) = 2        
 	}
 	SubShader
 	{
@@ -42,7 +41,7 @@
 			sampler2D _MainTex, _PosTex;
             float4 _MainTex_ST;
 			float4 _PosTex_TexelSize;
-			float _Length, _Scale;
+			float _Length, _Detail;
 
 			#define ts _PosTex_TexelSize
 			
@@ -57,10 +56,14 @@
                 float x = float(vid + 0.5f) * ts.x; // ts.x = 1.0/width
 				float y = 1.0f - t;
 				float4 dif_pos = tex2Dlod(_PosTex, float4(x, y, 0.0f, 0.0f));
-                float4 middle = float4(0.5f, -0.5f, -0.5f, 0.0f);
+				fixed MAGIC_NUMBER_SCALE = 1.5f;
+				float CorrectionValue = 1.0f/(MAGIC_NUMBER_SCALE * 100.0f);
+
 				v2f o;
-                o.vertex = UnityObjectToClipPos(_Scale * (float4(- dif_pos.x, dif_pos.y, dif_pos.z, 0.0f) + middle));
-				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.vertex = UnityObjectToClipPos(CorrectionValue * pow(10, 5 - _Detail) * (float4(- (dif_pos.x -0.5f), 
+                                                                                        dif_pos.y -0.5f,
+                                                                                        dif_pos.z -0.5f, 0.0f)));
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				return o;
 			}

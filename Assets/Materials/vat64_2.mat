@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: vat
+  m_Name: vat64_2
   m_Shader: {fileID: 4800000, guid: a7dcdca04701846c6ad63ef0975d9c01, type: 3}
   m_ShaderKeywords: ANIM_LOOP
   m_LightmapFlags: 4
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DataTex:
-        m_Texture: {fileID: 2800000, guid: d1dd9ba9ebac44c16a88e65ecef16920, type: 3}
+        m_Texture: {fileID: 2800000, guid: d513e891c36864cf3bc95bb0e347eb80, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _IndexTex:
-        m_Texture: {fileID: 2800000, guid: d1dd9ba9ebac44c16a88e65ecef16920, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -68,28 +68,30 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PosTex:
-        m_Texture: {fileID: 2800000, guid: 39f43f6d90b7f4fe5a644ec4f08f941d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 75a469784f8f0409fb22881c62b64319, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Bias: 0.04
-    - _BiasTwo: 1.064
+    - _BiasTwo: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DT: 0
+    - _Detail: 2
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Length: 3
+    - _Length: 10
     - _Loop: 1
     - _Metallic: 0.366
-    - _Middle: 0
+    - _Middle: 0.57
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Scale: 0.03
+    - _Red: 1
+    - _Scale: 0.15
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
