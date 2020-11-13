@@ -7,7 +7,6 @@
 		_Length ("animation length", Float) = 1
 		[Toggle(ANIM_LOOP)] _Loop("loop", Float) = 0
 		_Scale("Scale" , Range(0,1)) = 0.1
-		_BiasTwo("BiasTwo" , Range(1,1.2)) = 0
 		_Middle("middle" , Range(0,1)) = 0
 	}
 	SubShader
@@ -43,24 +42,24 @@
 			sampler2D _MainTex, _PosTex;
             float4 _MainTex_ST;
 			float4 _PosTex_TexelSize;
-			float _Length, _Scale, _BiasTwo;
+			float _Length, _Scale;
 
 			#define ts _PosTex_TexelSize
 			
 			v2f vert (appdata v, uint vid : SV_VertexID)
 			{
-                float t = (_Time.y) / _Length;
+                float t = float(_Time.y) / _Length;
                 #if ANIM_LOOP
-				t = fmod(t, 1.0);
+				t = fmod(t, 1.0f);
                 #else
 				t = saturate(t);
                 #endif
-                float x = (vid + 0.5) * ts.x * _BiasTwo;
-				float y = 1 - t;
-				float4 dif_pos = tex2Dlod(_PosTex, float4(x, y, 0, 0));
-                float4 middle = float4(0.5, -0.5, -0.5, 0);
+                float x = float(vid + 0.5f) * ts.x; // ts.x = 1.0/width
+				float y = 1.0f - t;
+				float4 dif_pos = tex2Dlod(_PosTex, float4(x, y, 0.0f, 0.0f));
+                float4 middle = float4(0.5f, -0.5f, -0.5f, 0.0f);
 				v2f o;
-                o.vertex = UnityObjectToClipPos(_Scale * (float4(- dif_pos.x, dif_pos.y, dif_pos.z, 0) + middle));
+                o.vertex = UnityObjectToClipPos(_Scale * (float4(- dif_pos.x, dif_pos.y, dif_pos.z, 0.0f) + middle));
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				return o;
