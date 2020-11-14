@@ -83,7 +83,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Length: 10
+    - _Length: 3
     - _Loop: 1
     - _Metallic: 0.366
     - _Middle: 0.57
