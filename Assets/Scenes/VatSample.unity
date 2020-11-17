@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &178986932 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fc0202c7a8e5948d38e19304a1774b85,
+    type: 3}
+  m_PrefabInstance: {fileID: 1363018568}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &309658500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,6 +134,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 401784576}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dce99cddad9a242e98cde5ec0cd4e1ce,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: dce99cddad9a242e98cde5ec0cd4e1ce,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b31c71b5f1c246eb8c23a2707e2b933, type: 2}
     - target: {fileID: 100000, guid: dce99cddad9a242e98cde5ec0cd4e1ce, type: 3}
       propertyPath: m_Name
       value: VatCloth
@@ -178,12 +194,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7b31c71b5f1c246eb8c23a2707e2b933, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dce99cddad9a242e98cde5ec0cd4e1ce, type: 3}
---- !u!4 &315969530 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: fc0202c7a8e5948d38e19304a1774b85,
-    type: 3}
-  m_PrefabInstance: {fileID: 1363018568}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &357183520
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,8 +313,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
-  - {fileID: 2051858143}
-  - {fileID: 315969530}
+  - {fileID: 2015183344}
+  - {fileID: 178986932}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -315,6 +325,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 401784576}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: fc0202c7a8e5948d38e19304a1774b85,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fc0202c7a8e5948d38e19304a1774b85, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -445,9 +460,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50.000004, y: 46.953003, z: 0}
---- !u!4 &2051858143 stripped
+--- !u!4 &2015183344 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: dce99cddad9a242e98cde5ec0cd4e1ce,
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dce99cddad9a242e98cde5ec0cd4e1ce,
     type: 3}
   m_PrefabInstance: {fileID: 309658500}
   m_PrefabAsset: {fileID: 0}
