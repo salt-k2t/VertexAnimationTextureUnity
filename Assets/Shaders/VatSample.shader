@@ -56,12 +56,11 @@
                 float x = float(vid + 0.5f) * ts.x; // ts.x = 1.0/width
 				float y = 1.0f - t;
 				float4 pos = tex2Dlod(_PosTex, float4(x, y, 0.0f, 0.0f));
-				fixed MAGIC_NUMBER_SCALE = 1.5f;
-				float CorrectionValue = 1.0f/(MAGIC_NUMBER_SCALE * 100.0f);
+				fixed SCALE_CONVERSION = 1.5f * 100.0f;
+				float CorrectionValue = pow(10, 5 - _Detail) / SCALE_CONVERSION;
 
 				v2f o;
-                o.vertex = UnityObjectToClipPos(CorrectionValue * pow(10, 5 - _Detail) 
-                                                * (float4(- (pos.x -0.5f), pos.y -0.5f, pos.z -0.5f, 0.0f)));
+                o.vertex = UnityObjectToClipPos(CorrectionValue * float4(- (pos.x - 0.5f), pos.y - 0.5f, pos.z - 0.5f, 0.0f));
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				return o;
